@@ -1,0 +1,5 @@
+.DS_Store
+*.synctex.gz
+assets/photoshoot_raw_*
+_mockups/
+_parked/
