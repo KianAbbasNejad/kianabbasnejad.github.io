@@ -31,6 +31,14 @@ body{margin:0;background:var(--base);color:var(--text);font-family:"Source Serif
 header .name{font-size:2.1rem;font-weight:600;margin:0;letter-spacing:-.01em}
 header .name a{color:inherit;text-decoration:none}
 header .sub{margin:4px 0 0;color:var(--muted)}
+/* The brace under the last name, as \underbrace{Abbas Nejad}_{last name}. The label is drawn here and is not in the
+   page's text, so search engines and screen readers still read the plain name. Other versions: _mockups/name/ */
+.name.braced{margin-bottom:1.45rem}
+.ub{position:relative;display:inline-block}
+.ub svg{position:absolute;left:.03em;width:calc(100% - .06em);top:calc(100% - .17em);height:.3em;overflow:visible;color:var(--muted)}
+.ub svg path{fill:none;stroke:currentColor;stroke-width:1.15;stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke}
+.ub::after{content:"last name";position:absolute;left:-1em;right:-1em;top:calc(100% + .3em);text-align:center;font-size:.36em;font-weight:400;font-style:italic;letter-spacing:0;line-height:1;color:var(--muted);white-space:nowrap}
+@supports (content:"x" / ""){.ub::after{content:"last name" / ""}}
 /* The tabs are a full-width band of the card (hence the negative margins), so that they can cover the text that scrolls under them */
 .tabs{margin:4px -60px 0;padding:12px 60px 0}
 .tabs-in{padding-bottom:12px;border-bottom:1px solid var(--rule)}
